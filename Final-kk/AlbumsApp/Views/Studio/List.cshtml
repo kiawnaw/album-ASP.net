@@ -1,0 +1,39 @@
+﻿@model List<Studio>
+
+@{
+    string title = "All Studios";
+}
+
+<h3>@title</h3>
+<partial name="AddLinks" />
+@*<a asp-controller="Album" asp-action="Add">Add a new album</a>
+<span class="linkSpacer">|</span>
+<a asp-controller="Studio" asp-action="Add">Add a new studio</a>*@
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Website</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Zip/Postal code</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var studio in Model)
+        {
+            <tr>
+                <td>@studio.Name</td>
+                <td><a target="_blank" href="@studio.Url">@studio.Url</a></td>
+                <td>@studio.Address</td>
+                <td>@studio.City</td>
+                <td>@studio.ZipCode</td>
+                <td>
+                    <a asp-controller="Studio" asp-action="Edit" asp-route-id="@studio.StudioId">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+﻿@model TopRatedAlbumsViewModel
+
+<aside class="topRatedAlbums">
+    <h4>Top Rated Albums:</h4>
+    <h6>With a rating of at least 8</h6>
+    <table class="table table-bordered table-primary">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.NumberOfAlbumsToDisplay; i++)
+            {
+                <tr>
+                    <td>@Model.Albums[@i].Name</td>
+                    <td>@Model.Albums[@i].Rating</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</aside>

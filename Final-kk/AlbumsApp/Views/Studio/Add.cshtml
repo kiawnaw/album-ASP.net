@@ -1,0 +1,15 @@
+﻿@model Studio
+
+@{
+    string title = "Add a new studio";
+    ViewBag.Title = title;
+}
+
+<h2>@title</h2>
+
+<form asp-controller="Studio" asp-action="Add" method="post" enctype="application/x-www-form-urlencoded">
+    <partial name="_StudioFormFieldsPartial" model="@Model" />
+
+    <input type="submit" value="Add studio" class="btn btn-primary" />
+    <a asp-controller="Album" asp-action="List" class="btn btn-primary">Cancel</a>
+</form>

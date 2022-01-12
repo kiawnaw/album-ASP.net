@@ -1,0 +1,17 @@
+﻿@model Studio
+
+@{
+    string title = "Edit a studio";
+    ViewBag.Title = title;
+}
+
+<h2>@title</h2>
+
+<form asp-controller="Studio" asp-action="Edit" asp-route-id="@Model.StudioId" method="post" enctype="application/x-www-form-urlencoded">
+    <partial name="_StudioFormFieldsPartial" model="@Model" />
+
+    <input type="hidden" asp-for="StudioId" />
+
+    <input type="submit" value="Update studio" class="btn btn-primary" />
+    <a asp-controller="Album" asp-action="List" class="btn btn-primary">Cancel</a>
+</form>

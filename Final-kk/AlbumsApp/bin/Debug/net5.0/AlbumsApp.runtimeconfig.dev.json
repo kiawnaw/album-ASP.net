@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Kiana\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Kiana\\.nuget\\packages"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+﻿@model AddOrEditAlbumViewModel
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<div class="form-group">
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="YearProduced">Year produced</label>
+    <input asp-for="YearProduced" class="form-control" />
+    <span asp-validation-for="YearProduced" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Rating">Rating (Between 0 &amp; 10)</label>
+    <input asp-for="Rating" class="form-control" value="@Model.Rating?.ToString("N1")" />
+    <span asp-validation-for="Rating" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="StudioId">Studio</label>
+    <select asp-for="StudioId" class="form-control">
+        <option value="">Select a studio..</option>
+        @foreach (Studio s in Model.AllStudios)
+        {
+            <option value="@s.StudioId">@s.Name</option>
+        }
+    </select>
+    <span asp-validation-for="StudioId" class="text-danger"></span>
+</div>

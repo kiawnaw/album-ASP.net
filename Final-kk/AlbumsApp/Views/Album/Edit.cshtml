@@ -1,0 +1,16 @@
+﻿@model AddOrEditAlbumViewModel
+@{
+    string title = "Edit an album";
+    ViewBag.Title = title;
+}
+
+<h2>@title</h2>
+
+<form asp-controller="Album" asp-action="Edit" asp-route-id="@Model.AlbumId" method="post" enctype="application/x-www-form-urlencoded">
+    <partial name="_AlbumFormFieldsPartial" model="@Model" />
+
+    <input type="hidden" asp-for="AlbumId" />
+
+    <input type="submit" value="Update" class="btn btn-primary" />
+    <a asp-controller="Album" asp-action="List" class="btn btn-primary">Cancel</a>
+</form>
